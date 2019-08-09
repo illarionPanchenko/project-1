@@ -4,7 +4,7 @@ import { Button, ButtonToolbar, ButtonGroup } from 'react-bootstrap';
 
 const Category = (props) => {
   return(
-      <div className="flex-box">
+      <div style={{marginLeft: "5vw"}}>
           <ButtonToolbar className="btn-toolbar toolbar" style={{marginBottom: '20px'}}>
               <ButtonGroup className="mr-2" aria-label="First group">
       <Button variant="outline-primary" onClick={()=>{props.filter('all')}}>all</Button>
