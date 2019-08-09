@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ec51a9c-e72c-4e7b-9234-132bef36ef10" name="Default Changelist" comment="">
+    <list default="true" id="3ec51a9c-e72c-4e7b-9234-132bef36ef10" name="Default Changelist" comment="style-fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/category-buttons/category-buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/category-buttons/category-buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/products/products.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +75,7 @@
       <updated>1565346908413</updated>
       <workItem from="1565346916513" duration="9024000" />
       <workItem from="1565356552725" duration="3038000" />
-      <workItem from="1565360191032" duration="4272000" />
+      <workItem from="1565360191032" duration="5803000" />
     </task>
     <task id="LOCAL-00001" summary="-init">
       <created>1565358728911</created>
@@ -89,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565364226966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+filter &amp; ReactBootstrap">
+      <created>1565364553904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565364553904</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +121,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="-init" />
     <MESSAGE value="+filter &amp; ReactBootstrap" />
-    <option name="LAST_COMMIT_MESSAGE" value="+filter &amp; ReactBootstrap" />
+    <MESSAGE value="style-fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="style-fix" />
   </component>
 </project>

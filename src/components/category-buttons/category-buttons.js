@@ -1,19 +1,22 @@
 import React from 'react';
 import './category-buttons.css';
-import { Button, ButtonToolbar, ButtonGroup } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 
 const Category = (props) => {
   return(
-      <div style={{marginLeft: "5vw"}}>
-          <ButtonToolbar className="btn-toolbar toolbar" style={{marginBottom: '20px'}}>
-              <ButtonGroup className="mr-2" aria-label="First group">
-      <Button variant="outline-primary" onClick={()=>{props.filter('all')}}>all</Button>
-      <Button variant="outline-primary" onClick={()=>{props.filter('home')}}>home</Button>
-    <Button variant="outline-primary" onClick={()=>{props.filter('health')}}>health</Button>
-    <Button variant="outline-primary" onClick={()=>{props.filter('baby')}}>baby</Button>
-    <Button variant="outline-primary" onClick={()=>{props.filter('sport')}}>sport</Button>
-              </ButtonGroup>
-          </ButtonToolbar>
+      <div style={{ margin:"20px"}}>
+          <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  Dropdown Button
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                  <Dropdown.Item onClick={()=>{props.filter('all')}}>All</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>{props.filter('home')}}>Home</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>{props.filter('health')}}>Health</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>{props.filter('baby')}}>Baby</Dropdown.Item>
+                  <Dropdown.Item onClick={()=>{props.filter('sport')}}>Sport</Dropdown.Item>
+              </Dropdown.Menu>
+          </Dropdown>
       </div>
 
   )

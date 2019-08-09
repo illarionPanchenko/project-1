@@ -51,7 +51,7 @@ export default class App extends React.Component {
 
     const visibleItems=this.filter(this.search(this.state.array,this.state.term),this.state.filter);
     return (
-        <div className="App">
+        <div>
           <Search onSearch={this.onSearchChange}/>
           <Category filter={this.onFilterChange}/>
           <Products items={visibleItems} term={this.state.term}/>
