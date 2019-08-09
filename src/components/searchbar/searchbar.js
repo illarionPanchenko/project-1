@@ -1,5 +1,6 @@
 import React from 'react';
 import './searchbar.css';
+import {FormControl} from "react-bootstrap";
 
 export default class Search extends React.Component{
     state={
@@ -14,8 +15,8 @@ export default class Search extends React.Component{
 
     render() {
         return(
-            <div>
-                <input placeholder='type to search' className='searchbar'
+            <div className="flex-box">
+                <FormControl placeholder='type to search' style={{width: '50%', margin: '20px'}}
                        value={this.state.term}
                        onChange={this.onSearch}/>
             </div>

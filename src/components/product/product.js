@@ -1,14 +1,15 @@
 import React from 'react';
 import './product.css'
+import { Card } from "react-bootstrap";
 
 const Product = (props) => {
                 return (
-                    <div className='item'>
-                            <img src={props.item.img} alt='' className="img"/>
-                            <h2>{props.item.brand}</h2>
-                            <p>{props.item.name}</p>
-                            <h2>Price: ${props.item.price}</h2>
-                    </div>)
+                    <Card.Body>
+                            <Card.Img src={props.item.img} />
+                            <Card.Title>{props.item.brand}</Card.Title>
+                            <Card.Text>{props.item.name}</Card.Text>
+                            <Card.Text>Price: ${props.item.price}</Card.Text>
+                    </Card.Body>)
 };
 
 export default Product;
