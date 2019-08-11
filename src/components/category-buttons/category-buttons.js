@@ -4,7 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 
 const Category = (props) => {
   return(
-      <div style={{ margin:"20px"}}>
+      <div style={{ margin:"2vw"}}>
           <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                   Category filter
