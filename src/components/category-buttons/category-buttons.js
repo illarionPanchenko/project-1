@@ -7,7 +7,7 @@ const Category = (props) => {
       <div style={{ margin:"20px"}}>
           <Dropdown>
               <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Dropdown Button
+                  Category filter
               </Dropdown.Toggle>
               <Dropdown.Menu>
                   <Dropdown.Item onClick={()=>{props.filter('all')}}>All</Dropdown.Item>
