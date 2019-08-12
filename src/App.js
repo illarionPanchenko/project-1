@@ -80,7 +80,7 @@ export default class App extends React.Component {
           <Route exact path={`${this.state.filter}`} render={() =>
               <Products items={visibleItems} term={this.state.term} filter={this.state.filter}/>
           } />
-            <Route path={`${this.state.filter}/${this.state.term}`} render={() =>//<div><h1>ALLLO</h1></div>
+            <Route path={`${this.state.filter}/${this.state.term}`} render={() =>
              <Products items={visibleItems} term={this.state.term} filter={this.state.filter}/>
           } />
           </Switch>

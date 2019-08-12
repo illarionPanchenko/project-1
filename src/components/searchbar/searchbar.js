@@ -13,7 +13,7 @@ export default class Search extends React.Component{
         this.setState({term});
     };
 
-    onSubmit=(term)=>{
+    onSubmit=()=>{
         this.props.onSearch(this.state.term);
     };
 
@@ -26,7 +26,7 @@ export default class Search extends React.Component{
                     />
                     <InputGroup.Prepend>
                         <LinkContainer to={`${this.props.filter}/${this.state.term}`}>
-                        <Button variant="outline-secondary" onClick={this.onSubmit}>Button</Button>
+                        <Button variant="outline-secondary" onClick={this.onSubmit}>Search</Button>
                         </LinkContainer>
                     </InputGroup.Prepend>
                 </InputGroup>
