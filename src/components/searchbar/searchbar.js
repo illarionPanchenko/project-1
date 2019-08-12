@@ -1,6 +1,7 @@
 import React from 'react';
 import './searchbar.css';
-import {FormControl} from "react-bootstrap";
+import {FormControl, InputGroup, Button} from "react-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default class Search extends React.Component{
     state={
@@ -10,15 +11,27 @@ export default class Search extends React.Component{
     onSearch=(e)=> {
         const term = e.target.value.toLowerCase();
         this.setState({term});
-        this.props.onSearch(term);
     };
+
+    onSubmit=(term)=>{
+        this.props.onSearch(this.state.term);
+    };
+
 
     render() {
         return(
             <div className="flex-box">
-                <FormControl placeholder='type to search' style={{width: '50%', margin: '20px'}}
-                       value={this.state.term}
-                       onChange={this.onSearch}/>
+                <InputGroup className="mb-3" style={{width: '70vw', marginTop:'20px'}}>
+                    <FormControl aria-describedby="basic-addon1" onChange={this.onSearch}
+                    />
+                    <InputGroup.Prepend>
+                        <LinkContainer to={`${this.props.filter}/${this.state.term}`}>
+                        <Button variant="outline-secondary" onClick={this.onSubmit}>Button</Button>
+                        </LinkContainer>
+                    </InputGroup.Prepend>
+                </InputGroup>
+
+
             </div>
         )
     }

@@ -3,6 +3,7 @@ import Product from "../product/product";
 import './products.css'
 import { Card, CardColumns } from "react-bootstrap";
 
+
 const Products =(props)=>{
 
     const elements = props.items.map((item)=>{
