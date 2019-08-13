@@ -13,10 +13,15 @@ const Products =(props)=>{
             </Card>
         )
     });
+    let noItems = '';
+    if (props.items.length===0){
+        noItems = 'no items'
+    }
 
         return(
             <CardColumns style={{margin: "2vw"}}>
                 {elements}
+                {noItems}
             </CardColumns>
         )
 };

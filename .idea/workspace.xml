@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ec51a9c-e72c-4e7b-9234-132bef36ef10" name="Default Changelist" comment="Routes(fix)">
+    <list default="true" id="3ec51a9c-e72c-4e7b-9234-132bef36ef10" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/counter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/products/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +28,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled124" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -80,7 +84,8 @@
       <workItem from="1565529289472" duration="368000" />
       <workItem from="1565595966899" duration="18393000" />
       <workItem from="1565616398187" duration="8341000" />
-      <workItem from="1565683605925" duration="3335000" />
+      <workItem from="1565683605925" duration="3873000" />
+      <workItem from="1565687558606" duration="4050000" />
     </task>
     <task id="LOCAL-00001" summary="-init">
       <created>1565358728911</created>
@@ -131,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565624481165</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Routes(reload bug fix)">
+      <created>1565687057642</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565687057642</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +169,7 @@
     <MESSAGE value="style-fix" />
     <MESSAGE value="Routes" />
     <MESSAGE value="Routes(fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Routes(fix)" />
+    <MESSAGE value="Routes(reload bug fix)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Routes(reload bug fix)" />
   </component>
 </project>

@@ -4,6 +4,7 @@ import Products from "./components/products/products";
 import Search from "./components/searchbar/searchbar";
 import Category from "./components/category-buttons/category-buttons";
 import{ BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//import Counter from "./components/counter";
 
 export default class App extends React.Component {
 
@@ -13,6 +14,7 @@ export default class App extends React.Component {
     filter:'/',
     visible:[],
   };
+
 
   componentDidMount() {
     fetch('https://demo8421975.mockable.io/products')
@@ -36,6 +38,7 @@ export default class App extends React.Component {
         })
 
   }
+
   componentDidUpdate(prevProps, prevState, snapshot) {
     if(this.state.filter!==prevState.filter || this.state.visible===null){
       const visible = this.filter(this.state.array, this.state.filter);
@@ -49,8 +52,12 @@ export default class App extends React.Component {
     this.setState({term: term});
   };
 
+  onFilterChange = (item) => {
+    this.setState({filter: item})
+  };
+
   search(items,term){
-    if (term.length===''){
+    if (term.length===0){
       return items;
     }
     return items.filter((item)=>{
@@ -58,14 +65,11 @@ export default class App extends React.Component {
     })
   };
 
-  onFilterChange = (item) => {
-      this.setState({filter: item})
-  };
   discharge=()=>{
     this.setState({term:''})
   };
 
-  filter(items, filter){
+  filter = (items, filter) => {
     switch (filter) {
       case '/': return items;
       case '/all': return items;
@@ -75,25 +79,28 @@ export default class App extends React.Component {
       case '/sport': return items.filter((item)=>item.bsr_category === "Sports & Outdoors");
       default: return null;
     }
-  }
+  };
+
 
 
   render() {
-    const visibleItems=this.search(this.state.visible, this.state.term);
+
+    const {visible, term, filter} = this.state;
+    const visibleItems=this.search(visible, term);
+
     return (
         <Router>
         <div>
-          <Search onSearch={this.onSearchChange} filter={this.state.filter} term={this.state.term}/>
-          <Category discharge={this.discharge} filter={this.onFilterChange} category={this.state.filter} term={this.state.term}/>
+          <Search onSearch={this.onSearchChange} filter={filter} term={term}/>
+          <Category discharge={this.discharge} filter={this.onFilterChange} category={filter} term={term}/>
           <Switch>
-          <Route path={`${this.state.filter}`} render={() =>
-              <Products items={visibleItems} term={this.state.term} filter={this.state.filter}/>
+          <Route path={`${filter}`} render={() =>
+              <Products items={visibleItems} term={term} filter={filter}/>
           } />
-            <Route path={`${this.state.filter}/${this.state.term}`} render={() =>
-             <Products items={visibleItems} term={this.state.term} filter={this.state.filter}/>
+            <Route path={`${filter}/${term}`} render={() =>
+             <Products items={visibleItems} term={term} filter={filter}/>
           } />
           </Switch>
-
         </div>
         </Router>
     );
