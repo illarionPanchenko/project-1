@@ -20,18 +20,28 @@ export default class App extends React.Component {
         .then((data)=>this.setState({array: data.products}))
         .then(()=>{
           this.setState(()=>{
-            const visible = this.filter(this.state.array, window.location.pathname);
+            const charId = window.location.pathname.indexOf('/',2);
+            let path = '';
+            let newTerm = '';
+            if(charId===-1){
+              path = window.location.pathname
+            }else{
+               path = window.location.pathname.slice(0, charId);
+                newTerm = window.location.pathname.slice(charId+1, window.location.pathname.length);
+            }
+            const filtered = this.filter(this.state.array, path);
+            const visible = this.search(filtered, newTerm);
             return {visible: visible}
           })
         })
 
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log(this.state.visible);
-    if(this.state.filter!==prevState.filter){
+    if(this.state.filter!==prevState.filter || this.state.visible===null){
       const visible = this.filter(this.state.array, this.state.filter);
       this.setState({visible: visible}
-      )}
+      );
+    }
   }
 
 
@@ -40,7 +50,7 @@ export default class App extends React.Component {
   };
 
   search(items,term){
-    if (term.length===0){
+    if (term.length===''){
       return items;
     }
     return items.filter((item)=>{
@@ -70,14 +80,13 @@ export default class App extends React.Component {
 
   render() {
     const visibleItems=this.search(this.state.visible, this.state.term);
-    console.log(this.state.filter+'/'+this.state.term);
     return (
         <Router>
         <div>
           <Search onSearch={this.onSearchChange} filter={this.state.filter} term={this.state.term}/>
           <Category discharge={this.discharge} filter={this.onFilterChange} category={this.state.filter} term={this.state.term}/>
           <Switch>
-          <Route exact path={`${this.state.filter}`} render={() =>
+          <Route path={`${this.state.filter}`} render={() =>
               <Products items={visibleItems} term={this.state.term} filter={this.state.filter}/>
           } />
             <Route path={`${this.state.filter}/${this.state.term}`} render={() =>
