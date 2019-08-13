@@ -4,14 +4,16 @@ import Products from "./components/products/products";
 import Search from "./components/searchbar/searchbar";
 import Category from "./components/category-buttons/category-buttons";
 import{ BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import Counter from "./components/counter";
+import {connect } from 'react-redux';
+import * as actions from'./actions'
+import {bindActionCreators} from "redux";
 
-export default class App extends React.Component {
+
+
+class App extends React.Component {
 
   state={
     array:[],
-    term:'',
-    filter:'/',
     visible:[],
   };
 
@@ -22,7 +24,7 @@ export default class App extends React.Component {
         .then((data)=>this.setState({array: data.products}))
         .then(()=>{
           this.setState(()=>{
-            const charId = window.location.pathname.indexOf('/',2);
+            const charId = window.location.pathname.indexOf('/',1);
             let path = '';
             let newTerm = '';
             if(charId===-1){
@@ -40,21 +42,12 @@ export default class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.state.filter!==prevState.filter || this.state.visible===null){
-      const visible = this.filter(this.state.array, this.state.filter);
+    if(this.props.category!==prevProps.category || this.state.visible===null){
+      const visible = this.filter(this.state.array, this.props.category);
       this.setState({visible: visible}
       );
     }
   }
-
-
-  onSearchChange = (term) => {
-    this.setState({term: term});
-  };
-
-  onFilterChange = (item) => {
-    this.setState({filter: item})
-  };
 
   search(items,term){
     if (term.length===0){
@@ -66,7 +59,7 @@ export default class App extends React.Component {
   };
 
   discharge=()=>{
-    this.setState({term:''})
+    this.props.actions.change('')
   };
 
   filter = (items, filter) => {
@@ -81,24 +74,24 @@ export default class App extends React.Component {
     }
   };
 
-
-
   render() {
 
-    const {visible, term, filter} = this.state;
-    const visibleItems=this.search(visible, term);
+    const {visible} = this.state;
+    const visibleItems=this.search(visible, this.props.term);
 
     return (
         <Router>
         <div>
-          <Search onSearch={this.onSearchChange} filter={filter} term={term}/>
-          <Category discharge={this.discharge} filter={this.onFilterChange} category={filter} term={term}/>
+          <Search/>
+          <Category
+              discharge={this.discharge}
+             />
           <Switch>
-          <Route path={`${filter}`} render={() =>
-              <Products items={visibleItems} term={term} filter={filter}/>
+          <Route path={`${this.props.category}`} render={() =>
+              <Products items={visibleItems}/>
           } />
-            <Route path={`${filter}/${term}`} render={() =>
-             <Products items={visibleItems} term={term} filter={filter}/>
+            <Route path={`${this.props.category}/${this.props.term}`} render={() =>
+             <Products items={visibleItems}/>
           } />
           </Switch>
         </div>
@@ -106,4 +99,21 @@ export default class App extends React.Component {
     );
   }
 }
+
+//////////////////////////////////////////----------------/////////////////////////////////////////////////////////
+
+const mapStateToProps = function (state) {
+  return{
+    term: state.term,
+    category: state.category
+  }
+};
+
+const mapDispatchToProps = function (dispatch) {
+  return{
+    actions: bindActionCreators(actions, dispatch)
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 

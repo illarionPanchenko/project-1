@@ -1,8 +1,11 @@
 import { combineReducers } from "redux";
-import counterReducer from "./reducer";
+import { counterReducer, termReducer, categoryReducer, onChangeReducer } from "./reducer";
 
 const allReducers = combineReducers({
     counter: counterReducer,
+    term: termReducer,
+    category: categoryReducer,
+    onChange: onChangeReducer,
 });
 
 export default allReducers;

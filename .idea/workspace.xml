@@ -2,14 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ec51a9c-e72c-4e7b-9234-132bef36ef10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/counter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/category-buttons/category-buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/category-buttons/category-buttons.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/products/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/searchbar/searchbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchbar/searchbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
       <workItem from="1565595966899" duration="18393000" />
       <workItem from="1565616398187" duration="8341000" />
       <workItem from="1565683605925" duration="3873000" />
-      <workItem from="1565687558606" duration="4050000" />
+      <workItem from="1565687558606" duration="18937000" />
     </task>
     <task id="LOCAL-00001" summary="-init">
       <created>1565358728911</created>
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565687057642</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Routes(reload bug fix)2">
+      <created>1565692148867</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565692148867</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +178,7 @@
     <MESSAGE value="Routes" />
     <MESSAGE value="Routes(fix)" />
     <MESSAGE value="Routes(reload bug fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Routes(reload bug fix)" />
+    <MESSAGE value="Routes(reload bug fix)2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Routes(reload bug fix)2" />
   </component>
 </project>
