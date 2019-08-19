@@ -5,9 +5,9 @@ import history from './history';
 import { Router } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Products from './components/products';
-import Search from './components/searchbar';
-import Category from './components/category-buttons';
+import Products from './components/products/products';
+import Search from './components/searchbar/searchbar';
+import Category from './components/category-buttons/category-buttons';
 import { fetchData } from './duck/products';
 
 const Wrapper = styled.section`

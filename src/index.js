@@ -15,10 +15,10 @@ const allReducers = combineReducers({
     onChange: onChangeReducer
 });
 
-const store = createStore(allReducers,
-    compose(
+export const store = createStore(allReducers,
+  //  compose(
         applyMiddleware(sagaMiddleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    //    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 );
 
 sagaMiddleware.run(watchFetch);
@@ -27,6 +27,8 @@ ReactDOM.render(
     <Provider store={store}>
         <App/>
     </Provider>
-    , document.getElementById('root'));
+    , document.getElementById('root')|| document.createElement('div') // for testing purposes
+);
+
 
 

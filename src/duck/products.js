@@ -33,7 +33,7 @@ export const onChangeReducer = (state = '', action) => {
     }
 };
 
-const initialState = {
+export const initialState = {
     data: [],
     loading: false,
     error: false,

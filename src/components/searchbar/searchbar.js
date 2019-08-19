@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { change, onChange } from '../duck/products';
+import { change, onChange } from '../../duck/products';
 import styled from 'styled-components';
-import history from '../history';
+import history from '../../history';
 
 const Wrapper = styled.section`
     margin-left: 17%;
@@ -33,7 +33,7 @@ const Search = () => {
             <StyledInputGroup className="mb-3">
                 <FormControl aria-describedby="basic-addon1" onChange={ onSearchValue }/>
                 <InputGroup.Prepend>
-                        <Button variant="outline-secondary" onClick={ onSubmit }>Search</Button>
+                    <Button variant="outline-secondary" onClick={ onSubmit }>Search</Button>
                 </InputGroup.Prepend>
             </StyledInputGroup>
         </Wrapper>

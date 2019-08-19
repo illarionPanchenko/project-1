@@ -1,9 +1,9 @@
 import React from 'react';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { category, change } from "../duck/products";
+import { category, change } from "../../duck/products";
 import styled from 'styled-components';
-import history from '../history';
+import history from '../../history';
 
 const Wrapper = styled.section`
 margin: 2vw;
